@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6214" systemVersion="14A314h" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6207"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -11,31 +10,41 @@
             <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Copyright (c) 2015 Smashing Boxes. All rights reserved." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="8ie-xW-0ye">
-                    <rect key="frame" x="20" y="439" width="441" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Algorhythm" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="kId-c2-rCX">
-                    <rect key="frame" x="20" y="140" width="441" height="43"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1vs-Qz-wfL">
+                    <rect key="frame" x="0.0" y="0.0" width="480" height="240"/>
+                    <color key="backgroundColor" red="0.1803921568627451" green="0.20392156862745098" blue="0.22352941176470587" alpha="1" colorSpace="calibratedRGB"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SO3-te-7gA">
+                    <rect key="frame" x="0.0" y="240" width="480" height="240"/>
+                    <color key="backgroundColor" red="0.12549019607843137" green="0.14117647058823529" blue="0.15686274509803921" alpha="1" colorSpace="calibratedRGB"/>
+                </view>
+                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Launch Icon" translatesAutoresizingMaskIntoConstraints="NO" id="eZ7-Xs-Fem">
+                    <rect key="frame" x="180" y="180" width="120" height="120"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="120" id="HZS-1S-LAN"/>
+                        <constraint firstAttribute="height" constant="120" id="j1a-7M-0Up"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="kId-c2-rCX" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="bottom" multiplier="1/3" constant="1" id="5cJ-9S-tgC"/>
-                <constraint firstAttribute="centerX" secondItem="kId-c2-rCX" secondAttribute="centerX" id="Koa-jz-hwk"/>
-                <constraint firstAttribute="bottom" secondItem="8ie-xW-0ye" secondAttribute="bottom" constant="20" id="Kzo-t9-V3l"/>
-                <constraint firstItem="8ie-xW-0ye" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" symbolic="YES" id="MfP-vx-nX0"/>
-                <constraint firstAttribute="centerX" secondItem="8ie-xW-0ye" secondAttribute="centerX" id="ZEH-qu-HZ9"/>
-                <constraint firstItem="kId-c2-rCX" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" symbolic="YES" id="fvb-Df-36g"/>
+                <constraint firstAttribute="centerX" secondItem="eZ7-Xs-Fem" secondAttribute="centerX" id="1T1-xh-HJn"/>
+                <constraint firstAttribute="bottom" secondItem="SO3-te-7gA" secondAttribute="bottom" id="Axd-jp-zF8"/>
+                <constraint firstItem="SO3-te-7gA" firstAttribute="height" secondItem="1vs-Qz-wfL" secondAttribute="height" id="Dv7-io-i1S"/>
+                <constraint firstItem="SO3-te-7gA" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="FdT-QY-A76"/>
+                <constraint firstItem="1vs-Qz-wfL" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="KQt-ms-lx6"/>
+                <constraint firstAttribute="centerY" secondItem="eZ7-Xs-Fem" secondAttribute="centerY" id="Wk4-rN-8Fe"/>
+                <constraint firstAttribute="trailing" secondItem="1vs-Qz-wfL" secondAttribute="trailing" id="ZJ7-go-qTJ"/>
+                <constraint firstItem="SO3-te-7gA" firstAttribute="top" secondItem="1vs-Qz-wfL" secondAttribute="bottom" id="pVc-wM-CKy"/>
+                <constraint firstAttribute="trailing" secondItem="SO3-te-7gA" secondAttribute="trailing" id="uNH-Hi-ZwV"/>
+                <constraint firstItem="1vs-Qz-wfL" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="zqp-PP-1BW"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="548" y="455"/>
         </view>
     </objects>
+    <resources>
+        <image name="Launch Icon" width="120" height="120"/>
+    </resources>
 </document>

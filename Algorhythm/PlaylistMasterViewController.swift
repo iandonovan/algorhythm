@@ -9,15 +9,27 @@
 import UIKit
 
 class PlaylistMasterViewController: UIViewController {
-  @IBOutlet weak var aButton: UIButton!
   @IBOutlet weak var playlistImageView0: UIImageView!
+  @IBOutlet weak var playlistImageView1: UIImageView!
+  @IBOutlet weak var playlistImageView2: UIImageView!
+  @IBOutlet weak var playlistImageView3: UIImageView!
+  @IBOutlet weak var playlistImageView4: UIImageView!
+  @IBOutlet weak var playlistImageView5: UIImageView!
+  
+  var playlistArray : [UIImageView] = []
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
-    aButton.setTitle("Press me!", forState: UIControlState.Normal)
-    let playlist = Playlist(index: 0)
-    playlistImageView0.image = playlist.icon
+    
+    // Adds the blank image view, iterates, and sets it up w/ images
+    playlistArray += [playlistImageView0, playlistImageView1, playlistImageView2, playlistImageView3, playlistImageView4, playlistImageView5]
+    for index in 0..<playlistArray.count {
+      let playlist = Playlist(index: index)
+      let playlistImageView = playlistArray[index]
+      
+      playlistImageView.image = playlist.icon
+      playlistImageView.backgroundColor = playlist.backgroundColor
+    }
   }
 
   override func didReceiveMemoryWarning() {
@@ -26,11 +38,19 @@ class PlaylistMasterViewController: UIViewController {
   }
 
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    if segue.identifier == "showPlaylistDetail" {
-      let playlistDetailController = segue.destinationViewController as! PlaylistDetailViewController
-      playlistDetailController.segueLabelText = "Yay! You pressed the button!"
+    if segue.identifier == "showPlaylistDetailSegue" {
+      
+      let playlistImageView = sender!.view as! UIImageView
+      // Search our array for the element we touched, then set details page if it's found
+      if let index = find(playlistArray, playlistImageView) {
+        let playlistDetailController = segue.destinationViewController as! PlaylistDetailViewController
+        playlistDetailController.playlist = Playlist(index: index)
+      }
     }
   }
   
+  @IBAction func showPlaylistDetail(sender: AnyObject) {
+    performSegueWithIdentifier("showPlaylistDetailSegue", sender: sender)
+  }
 }
 
